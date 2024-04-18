@@ -34,7 +34,7 @@ public class Pause : MonoBehaviour
 
 
     void UpdateTimers()
-    {f
+    {
         _scaledTime += Time.deltaTime;
         _unscaledTime += Time.unscaledDeltaTime;
 
