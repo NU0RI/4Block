@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private Camera mainCamera;
     private float _fallVelocity = 0;
     private CharacterController _characterController;
 
     private Vector3 _moveVector;
 
-    //public Animator animator;
-    private float gravity = 9.8f;
-    private float jumpForce = 4;
+    [SerializeField] private Animator animator;
+    [SerializeField] private float gravity = 9.8f;
+    [SerializeField] private float jumpForce;
 
-    private float speed = 5;
+    [SerializeField] private float speed;
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
@@ -41,30 +42,33 @@ public class PlayerController : MonoBehaviour
     private void MovmentUpdate()
     {
         _moveVector = Vector3.zero;
-        //var runDirection = 0;
+        var runDirection = 0;
+
+        Vector3 cameraForward = mainCamera.transform.forward;
+        cameraForward.y = 0; // игнорируем вертикальную составл€ющую
 
         if (Input.GetKey(KeyCode.W))
         {
-            _moveVector += transform.forward;
-            //runDirection = 1;
+            _moveVector += cameraForward;
+            runDirection = 1;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            _moveVector -= transform.forward;
-            //runDirection = 2;
+            _moveVector -= cameraForward;
+            runDirection = 2;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            _moveVector += transform.right;
-            //runDirection = 3;
+            _moveVector += mainCamera.transform.right;
+            runDirection = 3;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            _moveVector -= transform.right;
-            //runDirection = 4;
+            _moveVector -= mainCamera.transform.right;
+            runDirection = 4;
         }
 
-        //animator.SetInteger("Run Direction", runDirection);
+        animator.SetInteger("Run Direction", runDirection);
     }
     private void JumpUpdate()
     {
