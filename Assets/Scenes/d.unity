@@ -3686,6 +3686,11 @@ PrefabInstance:
       propertyPath: _sensivity
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 4897804413020007346, guid: aa5cba3dd0073044b8237945d0a90428,
+        type: 3}
+      propertyPath: _verticalLover
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5102657905491472596, guid: aa5cba3dd0073044b8237945d0a90428,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
