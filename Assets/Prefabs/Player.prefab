@@ -184,8 +184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sensivity: 200
   _player: {fileID: 8287127070974798229}
-  _verticalLover: 80
-  _verticalUpper: -80
+  _verticalLover: 50
+  _verticalUpper: -70
 --- !u!1001 &6987181987772647260
 PrefabInstance:
   m_ObjectHideFlags: 0
