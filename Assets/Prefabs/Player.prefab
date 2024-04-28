@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 2574733869268223625}
+  _fallVelocity: 0
+  _characterController: {fileID: 7336171547924344331}
+  _moveVector: {x: 0, y: 0, z: 0}
   animator: {fileID: 0}
   gravity: 9.8
   jumpForce: 5
@@ -105,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 2169420899515142748}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.73, z: 0}
+  m_LocalPosition: {x: 0, y: 1.73, z: 0.056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
