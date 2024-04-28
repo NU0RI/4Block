@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
-    private float _fallVelocity = 0;
-    private CharacterController _characterController;
+    [SerializeField] private float _fallVelocity = 0;
+    [SerializeField] private CharacterController _characterController;
 
-    private Vector3 _moveVector;
+    [SerializeField] private Vector3 _moveVector;
 
     [SerializeField] private Animator animator;
     [SerializeField] private float gravity = 9.8f;
@@ -42,39 +42,39 @@ public class PlayerController : MonoBehaviour
     private void MovmentUpdate()
     {
         _moveVector = Vector3.zero;
-        var runDirection = 0;
+        //var runDirection = 0;
 
         Vector3 cameraForward = mainCamera.transform.forward;
-        cameraForward.y = 0; // игнорируем вертикальную составл€ющую
+        cameraForward.y = 0; 
 
         if (Input.GetKey(KeyCode.W))
         {
             _moveVector += cameraForward;
-            runDirection = 1;
+            //runDirection = 1;
         }
         if (Input.GetKey(KeyCode.S))
         {
             _moveVector -= cameraForward;
-            runDirection = 2;
+            //runDirection = 2;
         }
         if (Input.GetKey(KeyCode.D))
         {
             _moveVector += mainCamera.transform.right;
-            runDirection = 3;
+            //runDirection = 3;
         }
         if (Input.GetKey(KeyCode.A))
         {
             _moveVector -= mainCamera.transform.right;
-            runDirection = 4;
+            //runDirection = 4;
         }
 
-        animator.SetInteger("Run Direction", runDirection);
+        //animator.SetInteger("Run Direction", runDirection);
     }
     private void JumpUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
         {
-            _fallVelocity = -jumpForce;
+                _fallVelocity = -jumpForce;
         }
     }
 }

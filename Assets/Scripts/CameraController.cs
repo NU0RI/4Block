@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Transform _player;
     [SerializeField] private float _verticalLover;
     [SerializeField] private float _verticalUpper;
-    private float _currentVerticalAngle;
+    [SerializeField] private float _currentVerticalAngle;
 
     void Start()
     {
